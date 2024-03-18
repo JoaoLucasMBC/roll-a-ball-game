@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameObject timerObject;
     [SerializeField] private Camera playerCamera;
+
+    [Header("Health Points")]
+    [SerializeField] private int health = 3;
+    [SerializeField] private Image[] hearts;
 
     // Start is called before the first frame update
     void Start()
@@ -92,6 +97,14 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("Ground")) {
             isGrounded = true;
+        } else if (other.gameObject.CompareTag("Enemy")) {
+            health--;
+            if (health >= 0) {
+                hearts[3 - health - 1].enabled = false;
+            }
+            if (health == 0) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
     }
 }
