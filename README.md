@@ -19,7 +19,7 @@ But be careful, your clock is running down before the cave collapses!
 
 * Heart Sprite: [LINK](https://freepngdownload.com/heart/heart-png-free-image-download-3#google_vignette)
 
-* Neon orange timer: [Curso de Unity que fiz nas férias](udemy.com/course/unitycourse/)
+* Neon orange timer: [Curso de Unity que fiz nas férias](https://udemy.com/course/unitycourse/)
 
 
 ### Materials
@@ -57,3 +57,8 @@ But be careful, your clock is running down before the cave collapses!
 * Health Pickup: [LINK](https://pixabay.com/sound-effects/health-pickup-6860/)
 
 * Mechanical Alarm: [LINK](https://pixabay.com/sound-effects/mechanical-alarm-clock-14474/)
+
+
+### Code
+
+All code references are commented in the code
