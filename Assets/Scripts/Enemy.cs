@@ -12,15 +12,18 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        // Start moving towards point A
+        // Ele começa indo para o ponto A
         currentTarget = pointA;
     }
 
     void Update()
     {
-        float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, currentTarget, step);
+        // Move o inimigo em direção ao ponto atual
+        // Linha escrita com suporte do ChatGPT
+        // Prompt: Como fazer um objeto em Unity se mover entre dois pontos
+        transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime);
 
+        // Caso ele chegue perto o suficiente de um ponto, passa a seguir o outro
         if (Vector3.Distance(transform.position, currentTarget) < 0.001f)
         {
             if (currentTarget == pointA)

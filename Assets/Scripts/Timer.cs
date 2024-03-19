@@ -7,15 +7,20 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] float timeToDie = 120.0f;
+    // Lógica do timer foi retirada de um curso que eu fiz de Unity nas férias
+    // Créditos: https://udemy.com/course/unitycourse/
+
+    [SerializeField] float timeToDie = 90.0f;
     [SerializeField] Image timerImage;
     float timerValue;
     float fillFraction;
+    public bool playing;
 
     // Start is called before the first frame update
     void Start()
     {
         ResetTimer();
+        playing = true;
     }
 
     // Update is called once per frame
@@ -27,11 +32,12 @@ public class Timer : MonoBehaviour
 
     private void UpdateTimer() {
         timerValue -= Time.deltaTime;
-        if (timerValue <= 0) {
-            // loads the next scene
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        } else {
-            fillFraction = timerValue / timeToDie;
+        if (playing) {
+            if (timerValue <= 0) {
+                playing = false;
+            } else {
+                fillFraction = timerValue / timeToDie;
+            }
         }
     }
 

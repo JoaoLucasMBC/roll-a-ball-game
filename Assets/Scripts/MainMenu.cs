@@ -22,9 +22,8 @@ public class MainMenu : MonoBehaviour
 
     public void MuteGame() {
         isMuted = !isMuted;
-        AudioListener.pause = !AudioListener.pause;
 
-        // change the sprite1 and sprite2 inside the SpriteOnHover script in the muteButton
+        // Troca o sprite do botão de mute
         if (isMuted) {
             muteButton.GetComponent<SpriteOnHover>().sprite1 = muteSprite;
             muteButton.GetComponent<SpriteOnHover>().sprite2 = muteSpriteHover;
@@ -35,7 +34,6 @@ public class MainMenu : MonoBehaviour
     }
 
     public void QuitGame() {
-        Debug.Log("QUIT!");
         Application.Quit();
     }
 }

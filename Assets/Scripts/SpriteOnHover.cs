@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SpriteOnHover : MonoBehaviour
 {
+    // Troca para o sprite de hover quando o mouse passa por cima
+
     [SerializeField] Button button;
     [SerializeField] public Sprite sprite1;
     [SerializeField] public Sprite sprite2;

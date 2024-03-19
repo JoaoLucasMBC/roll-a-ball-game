@@ -6,7 +6,6 @@ public class CameraController : MonoBehaviour
 {
     public GameObject player;
     public float rotationSpeed = 5f;
-
     private Vector3 offset;
     private float currentAngleY;
 
@@ -18,16 +17,20 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
-        // Mouse input for rotation
+        // Pega e soma a rotação do mouse horizontalmente
         currentAngleY += Input.GetAxis("Mouse X") * rotationSpeed;
 
-        // Set the angle into a rotation around the Y axis (up axis)
+        // Usa Quaternio para rotação
+        // Linha escrita com suporte do ChatGPT
+        // Prompt: Como fazer uma rotação da câmera em Unity
         Quaternion rotation = Quaternion.Euler(0, currentAngleY, 0);
 
-        // Adjust the camera position with the new rotation while maintaining the original offset distance
+        // Ajuda a câmera com o offset do jogador
         transform.position = player.transform.position + rotation * offset;
 
-        // Look at the player but keeps the camera's up vector parallel to the world's up vector
+        // Câmera olha para o jogador
+        // Linha escrita com suporte do ChatGPT
+        // Prompt: Como fazer uma câmera seguir o jogador em Unity
         transform.LookAt(player.transform.position + Vector3.up);
     }
 }
