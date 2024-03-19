@@ -14,6 +14,9 @@ public class EndMenu : MonoBehaviour
 
     public void Start() {
 
+        // Unlocka o cursor
+        Cursor.lockState = CursorLockMode.None;
+
         audioSource = GetComponent<AudioSource>();
 
         // Pega as variáveis do PlayerPrefs

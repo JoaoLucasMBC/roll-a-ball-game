@@ -49,6 +49,9 @@ public class PlayerController : MonoBehaviour
         UpdateProgressBar();
         playerCamera = Camera.main;
         sFX = GetComponent<SFX>();
+
+        // Locka o mouse
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update() {
@@ -70,6 +73,12 @@ public class PlayerController : MonoBehaviour
                 sFX.PlayJump();
                 isGrounded = false;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Cursor.lockState = CursorLockMode.None;
+            SaveVariables();
+            SceneManager.LoadScene(0);
         }
     }
 
